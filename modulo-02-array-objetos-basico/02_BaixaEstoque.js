@@ -1,7 +1,7 @@
 // Puxando a biblioteca
 const prompt = require('readline-sync');
 
-console.log("--- Atualizacao de Estoque de Camisetas ---");
+console.log("---- Atualizacao de Estoque de Camisetas ----");
 
 // Array com quantidades dos tamanhos P, M e G
 let estoqueTamanhos = [10, 15, 8];

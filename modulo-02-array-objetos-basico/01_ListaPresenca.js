@@ -1,7 +1,7 @@
 // Puxando a biblioteca
 const prompt = require('readline-sync');
 
-console.log("--- Registro de Evento Academico ---");
+console.log("---- Registro do Evento Academico ----");
 
 // Criando o array já com dois nomes (texto/string)
 let listaAlunos = ["Ana Silva", "Bruno Costa"];

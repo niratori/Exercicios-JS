@@ -1,3 +1,4 @@
+// Puxando a biblioteca
 const prompt = require('readline-sync');
 
 console.log("--- Cadastro Clinica Veterinaria ---");
@@ -10,7 +11,7 @@ let idadeDog = prompt.questionInt("Idade do animal: ");
 // Criando o objeto vazio
 let paciente = {};
 
-// Adicionando as propriedades ao objeto
+// Adicionando as propriedades pro objeto
 paciente.nome = nomeDog;
 paciente.raca = racaDog;
 paciente.idade = idadeDog;
@@ -23,5 +24,5 @@ if (paciente.idade >= 8) {
 }
 
 // Exibindo o objeto completo (Ficha técnica)
-console.log("\n--- Ficha do Paciente ---");
+console.log("---- Ficha do Paciente ----");
 console.log(paciente);
