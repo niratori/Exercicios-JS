@@ -1,3 +1,4 @@
+// Puxando a biblioteca
 const prompt = require('readline-sync');
 
 let carrinho = {

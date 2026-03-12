@@ -1,7 +1,7 @@
 const prompt = require('readline-sync');
 
 let passageiro = {
-    nome: "Nirath",
+    nome: "Ricardo",
     historico: [
         { destino: "Curitiba", milhas: 1000 },
         { destino: "Sao Paulo", milhas: 1500 }

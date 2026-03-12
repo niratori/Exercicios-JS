@@ -1,7 +1,7 @@
 const prompt = require('readline-sync');
 
 let atleta = {
-    nome: "Nirath",
+    nome: "Joao",
     peso: 80,
     meta: "Emagrecimento",
     historicoMaratonas: [21, 15, 42] // Distâncias passadas
