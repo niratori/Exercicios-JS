@@ -10,7 +10,7 @@ let atleta = {
 let corridaHoje = prompt.questionFloat("Distancia da corrida de hoje (km): ");
 atleta.historicoMaratonas.push(corridaHoje);
 
-// Calculando média dos 3 últimos (ignorando o primeiro/mais antigo)
+// Calculando média dos 3 últimos (ignorando o mais antigo)
 let listaRecente = atleta.historicoMaratonas.slice(-3); 
 let media = (listaRecente[0] + listaRecente[1] + listaRecente[2]) / 3;
 

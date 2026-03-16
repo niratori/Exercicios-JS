@@ -16,7 +16,7 @@ let hoje = {
 
 aluno.historicoDias.push(hoje);
 
-// Focando no último registro inserido
+// Focando no último registro escrito
 let ultimoRegistro = aluno.historicoDias[aluno.historicoDias.length - 1];
 
 if (ultimoRegistro.paginasLidas > 50 && aluno.pontosDeLeitura > 0) {

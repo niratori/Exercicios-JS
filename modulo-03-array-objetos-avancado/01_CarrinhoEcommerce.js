@@ -16,7 +16,7 @@ carrinho.itensPrecos.push(prompt.questionFloat("Preco do produto 3: "));
 let total = carrinho.itensPrecos[0] + carrinho.itensPrecos[1] + carrinho.itensPrecos[2];
 
 if (total > 200 || carrinho.tipoAssinatura === "Prime") {
-    carrinho.freteGratis = true; // Selo criado dinamicamente
+    carrinho.freteGratis = true; // Selo criado de maneira dinamica
     console.log("PARABENS! Voce ganhou Frete Gratis!");
 } else {
     total = total + 30; // Taxa fixa

@@ -17,7 +17,7 @@ pedido.extras.push(extra1, extra2);
 let subtotal = (pedido.valorBaseHambúrguer + precoExtra1 + precoExtra2) * pedido.quantidade;
 
 if (pedido.extras.length === 2 && pedido.quantidade > 2) {
-    let totalComDesconto = subtotal * 0.80; // 20% OFF
+    let totalComDesconto = subtotal * 0.80; // 20% off
     console.log("Desconto aplicado! Total: R$ " + totalComDesconto.toFixed(2));
 } else {
     console.log("Total: R$ " + subtotal.toFixed(2));
