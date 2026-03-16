@@ -1,3 +1,4 @@
+// Puxando a lib
 const prompt = require('readline-sync');
 
 console.log("--- Sistema de Seguranca Bancaria ---");
