@@ -7,7 +7,7 @@ Esse repositório tem 25 exercícios práticos desenvolvidos durante o meu curso
 * **Módulo 1:** Estruturas Condicionais (`if`, `else`, operadores lógicos `&&` e `||`).
 * **Módulo 2:** Fundamentos de Arrays e Objetos.
 * **Módulo 3:** Estruturas Compostas (objetos aninhados, cálculos de médias e propriedades dinâmicas).
-* **Módulo 4:** Linhas de Repetição (while, for e do-while)
+* **Módulo 4:** Linhas de Repetição (`while`, `for` e `do-while)
 
 ## Tecnologias Usadas
 * Node.js
