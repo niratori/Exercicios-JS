@@ -1,14 +1,29 @@
+const prompt = require('readline-sync');
+
 console.log("--- Atualizacao Salarial (Reajuste 10%) ---");
 
-let salarios = [2500, 3200, 4100, 5000, 6200];
+// array pra armazenar os valores
+let salarios = [];
+let continuar = true;
 
-console.log("Salarios antigos: " + salarios);
+// loop para pegar varios salarios
+while (continuar) {
+    let valor = prompt.questionFloat("Digite um salario (ou 0 para encerrar): ");
+    
+    if (valor === 0) {
+        continuar = false;
+    } else {
+        salarios.push(valor);
+    }
+}
 
-// Percorrendo cada salario do array
-salarios.forEach((valorAntigo, indice) => {
+console.log("\nSalarios antigos: " + salarios);
+
+// outro array com os reajustes usando .map pra ficar mais bonito que foreach
+let salariosAtualizados = salarios.map((valorAntigo) => {
     let aumento = valorAntigo * 0.10;
-    salarios[indice] = valorAntigo + aumento;
+    return valorAntigo + aumento;
 });
 
 console.log("Novos salarios atualizados: ");
-console.log(salarios);
+console.log(salariosAtualizados);
