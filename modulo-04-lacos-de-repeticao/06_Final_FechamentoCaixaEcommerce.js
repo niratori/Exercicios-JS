@@ -13,12 +13,12 @@ let clientesFinalizados = [];
 carrinhos.forEach((carrinho) => {
     console.log("Processando pedido de: " + carrinho.cliente);
     
-    // 1. Somando o total do carrinho
+    // somando o total do carrinho
     let totalDevido = 0;
     carrinho.produtos.forEach(preco => totalDevido += preco);
     console.log("Total a pagar: R$ " + totalDevido.toFixed(2));
 
-    // 2. Sistema de Pagamento
+    // o sistema de pagamento:
     let totalPago = 0;
     while (totalPago < totalDevido) {
         let falta = totalDevido - totalPago;
@@ -26,7 +26,7 @@ carrinhos.forEach((carrinho) => {
         totalPago += pagamento;
     }
 
-    // 3. Verificando Troco
+    // if else pra verificar o troco
     if (totalPago > totalDevido) {
         let troco = totalPago - totalDevido;
         console.log("Pagamento concluido. Troco: R$ " + troco.toFixed(2));
@@ -37,7 +37,7 @@ carrinhos.forEach((carrinho) => {
     clientesFinalizados.push(carrinho.cliente);
 });
 
-// 4. Relatório Final
+// o relatorio de fechamento
 console.log("==========================================");
 console.log("RELATORIO DE FECHAMENTO:");
 console.log("Pagamentos confirmados para: " + clientesFinalizados.join(", "));
