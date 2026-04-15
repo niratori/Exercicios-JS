@@ -1,6 +1,6 @@
 # Exercícios de Lógica de Programação com JavaScript
 
-Esse repositório tem 25 exercícios práticos desenvolvidos durante o meu curso de programação. O objetivo foi dominar a sintaxe do JavaScript e aplicar a lógica nessas situações.
+Esse repositório tem atualmente 51 exercícios propostos, 36 realizados e alguns módulos de projetos à parte.
 
 ## 📁 Estrutura do Projeto
 
@@ -8,6 +8,11 @@ Esse repositório tem 25 exercícios práticos desenvolvidos durante o meu curso
 * **Módulo 2:** Fundamentos de Arrays e Objetos.
 * **Módulo 3:** Estruturas Compostas (objetos aninhados, cálculos de médias e propriedades dinâmicas).
 * **Módulo 4:** Linhas de Repetição (`while`, `for` e `do-while`)
+* **Módulo 5:** Switch e Funções.
+* ## Extras:
+* **Módulo Desafios Integrados**
+* **Dois Projetos de Calculadora**
+* **Módulo CRUD**
 
 ## Tecnologias Usadas
 * Node.js
