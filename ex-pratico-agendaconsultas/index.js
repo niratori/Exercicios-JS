@@ -1,3 +1,5 @@
+import prompt from "readline-sync";
+
 import dados from "./dados.js";
 import listarConsultas from "./listarConsultas.js";
 import adicionarConsulta from "./adicionarConsulta.js";
@@ -6,23 +8,21 @@ import cancelarConsulta from "./cancelarConsulta.js";
 
 function mainMenu() {
     console.log("\n=== Menu de Consultas ===");
-    console.log("1. Listar Consultas (READ)");
-    console.log("2. Agendar Consulta (CREATE)");
+    console.log("1. Agendar Consulta (CREATE)");
+    console.log("2. Listar Consultas (READ)");
     console.log("3. Atualizar Consulta (UPDATE)");
     console.log("4. Cancelar Consulta (DELETE)");
-    console.log("5. Sair");
+    console.log("5. Sair (QUIT)");
 }
 
-while (opcao != "5") {
+let opcao;
+
+while (opcao !== "5") {
     mainMenu();
     let opcao = prompt.question("Escolha uma opção: ");
 
     switch (opcao) {
         case "1":
-            // Operação: READ
-            listarConsultas(dados);
-            break;
-        case "2":
             // Operação: CREATE
             let paciente = prompt.question("Nome do Paciente: ");
             let data = prompt.question("Data da Consulta (dd-mm-yyyy): ");
@@ -30,6 +30,10 @@ while (opcao != "5") {
             let descricao = prompt.question("Descrição da Consulta: ");
 
             adicionarConsulta(dados.pacientes, dados.medicos, dados.consultas, paciente, data, hora, descricao);
+            break;
+        case "2":
+            // Operação: READ
+            listarConsultas(dados);
             break;
         case "3":
             // Operação: UPDATE
@@ -43,9 +47,19 @@ while (opcao != "5") {
         case "4":
             // Operação; DELETE
             let idCancelar = prompt.questionInt("ID da consulta a ser cancelada: ");
-            cancelarConsulta(dados.consultas, idCancelar);
+
+            // Requisito de confirmação antes de cancelar a consulta
+            let confirmacao = prompt.question(`Tem certeza que deseja cancelar a consulta com ID ${idCancelar}? (s/n): `);
+
+            if (confirmacao.toLowerCase() === "s") {
+                cancelarConsulta(dados.consultas, idCancelar);
+                console.log(`Consulta com ID ${idCancelar} cancelada com sucesso!`);
+            } else {
+                console.log("Cancelamento de consulta abortado.");
+            }
             break;
         case "5":
+            // Operação: QUIT
             console.log("Saindo do sistema de agendamento de consultas...");
             break;
         default:

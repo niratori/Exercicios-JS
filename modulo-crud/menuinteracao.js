@@ -13,7 +13,7 @@ function mainMenu() {
     console.log("5. Sair");
 }
 
-while (opcao != "5") {
+while (opcao !== "5") {
     mainMenu();
     let opcao = prompt.question("Escolha uma opção: ");
 
