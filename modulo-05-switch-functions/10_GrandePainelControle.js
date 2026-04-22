@@ -1,4 +1,4 @@
-const prompt = require('readline-sync');
+const prompt = require("readline-sync");
 
 function registrarVenda(saldo, venda) {
     return saldo + venda;
