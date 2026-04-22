@@ -1,22 +1,22 @@
-function atualizarConsulta(idConsulta, novaData, novaHora, novaDescricao) {
-    // Achar a consulta com base no ID fornecido
-    let consultaEncontrada = consultas.find(c => c.id === idConsulta && !c.cancelada);
+function atualizarConsulta(consultas, idConsulta, novaData, novaHora, novaDescricao) {
+    
+    // 1. Achar a consulta (Lembre-se: o array 'consultas' deve vir como 1º argumento)
+    let consultaEncontrada = consultas.find(c => c.id === idConsulta);
 
-    // Fazer verificação para ver se a consulta foi encontrada
+    // 2. Verificação (O return DEVE estar dentro das chaves do if)
     if (!consultaEncontrada) {
-        console.log(`Erro: Consulta com ID ${idConsulta} não encontrada ou já está cancelada!`);
+        console.log(`Erro: Consulta com ID ${idConsulta} não encontrada!`);
+        return; // Para a execução aqui se não encontrar
     }
-        return;
 
-    /* Permita que o usuário altere apenas a data e a descrição da consulta. Use a
-    regra do operador lógico || ensinada em aula para manter o dado antigo caso o usuário
-    deixe o campo em branco. Não permita alterar o médico ou o paciente (se errar isso, a
-    regra de negócio diz que a consulta deve ser cancelada e refeita */
+    // 3. Lógica do Operador || (Short-circuit)
+    // Se 'novaData' for uma string vazia "", o JS entende como 'false' 
+    // e mantém o valor antigo (consultaEncontrada.data)
     consultaEncontrada.data = novaData || consultaEncontrada.data;
     consultaEncontrada.hora = novaHora || consultaEncontrada.hora;
     consultaEncontrada.descricao = novaDescricao || consultaEncontrada.descricao;
 
-    console.log(`Consulta com ID ${idConsulta} atualizada com sucesso!`);
+    console.log(`\n Consulta com ID ${idConsulta} atualizada com sucesso!`);
 }
 
 export default atualizarConsulta;

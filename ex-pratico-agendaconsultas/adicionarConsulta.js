@@ -1,55 +1,50 @@
-function adicionarConsulta(pacientes, medicos, consultas, novoPaciente, novaData, novaHora, novaDescricao) {
+function adicionarConsulta(pacientes, medicos, consultas, nomePaciente, nomeMedico, novaData, novaHora, novaDescricao) {
 
-    // Gerar um novo ID para a consulta de forma automática
-    let novoId;
-    if (consultas.length > 0) {
-        let ultimaConsulta = consultas[consultas.length - 1];
-        novoId = ultimaConsulta.id + 1;
-    }
-    else 
-        {
-        novoId = 1; // Se for a primeira consulta, vai começar com o ID 1
+    // 1. GERAR ID DA CONSULTA
+    let novoId = consultas.length > 0 ? consultas[consultas.length - 1].id + 1 : 1;
+
+    // 2. VERIFICAR OU CRIAR PACIENTE
+    // Buscamos se o nome já existe (ignorando maiúsculas/minúsculas)
+    let pacienteEncontrado = pacientes.find(p => p.nome.toLowerCase() === nomePaciente.toLowerCase());
+
+    if (!pacienteEncontrado) {
+        console.log(`Paciente "${nomePaciente}" não encontrado. Cadastrando novo paciente...`);
+        
+        // Lógica de criar novo paciente se não existir
+        let novoIdPaciente = pacientes.length > 0 ? pacientes[pacientes.length - 1].id + 1 : 1;
+        pacienteEncontrado = { 
+            id: novoIdPaciente, 
+            nome: nomePaciente,
+            // Aqui você poderia adicionar campos padrão se quisesse
+        };
+        pacientes.push(pacienteEncontrado);
     }
 
-    // Criar um novo objeto de consulta com os dados fornecidos
+    // 3. VERIFICAR MÉDICO (Médicos geralmente já devem estar no sistema)
+    let medicoEncontrado = medicos.find(m => m.nome.toLowerCase() === nomeMedico.toLowerCase());
+
+    if (!medicoEncontrado) {
+        console.log(`Erro: Médico "${nomeMedico}" não encontrado! A consulta precisa de um médico cadastrado.`);
+        return; // Aqui sim paramos, pois não se "cria" um médico na hora da consulta
+    }
+
+    // 4. CRIAR O OBJETO DA CONSULTA
+    // Associamos os IDs que encontramos ou criamos acima
     let novaConsulta = {
         id: novoId,
         data: novaData,
         hora: novaHora,
+        idPaciente: pacienteEncontrado.id, // Chave estrangeira
+        idMedico: medicoEncontrado.id,     // Chave estrangeira
         descricao: novaDescricao
     };
 
-    // Fazer uma verificação para ver se o paciente existe na lista de pacientes
-    let pacienteEncontrado = pacientes.find(p => p.nome.toLowerCase() === novoPaciente.toLowerCase());
-    if (!pacienteEncontrado) {
-        console.log(`Erro: Paciente "${novoPaciente}" não encontrado! Consulta não agendada.`);
-    // Se o paciente não for encontrado, a função vai criar um novo ID para o paciente e registrar o novo paciente na lista de pacientes, associando-o à consulta que está sendo agendada.
-    } else {
-        let novoIdPaciente;
-        if (pacientes.length > 0) {
-            let ultimoPaciente = pacientes[pacientes.length -1];
-            novoIdPaciente = ultimoPaciente.id + 1;
-        }
-    }
-        return;
-    } 
-
-    // Também o mesmo processo de verificação para o médico
-    let medicoEncontrado = medicos.find(m => m.nome.toLowerCase() === novaDescricao.toLowerCase());
-    if (!medicoEncontrado) {
-        console.log(`Erro: Médico "${novaDescricao}" não encontrado! Consulta não agendada.`);
-    // Se o médico não for encontrado, a função vai perguntar ao usuário se ele deseja cadastrar um novo médico. Se o usuário confirmar, a função vai criar um novo ID para o médico e registrar o novo médico na lista de médicos, associando-o à consulta que está sendo agendada.
-        
-        return;
-    
-
-    // Se tanto o paciente quanto o médico forem encontrados no sistema de verificação, associaremos seus respectivos IDs à nova consulta
-    novaConsulta.idPaciente = pacienteEncontrado.id;
-    novaConsulta.idMedico = medicoEncontrado.id;
-
-    // Adicionar a nova consulta à lista de consultas
+    // 5. SALVAR E FINALIZAR
     consultas.push(novaConsulta);
-    console.log(`Consulta agendada com sucesso para o paciente "${novoPaciente}" com o médico "${medicoEncontrado.nome}" na data ${novaDData} às ${novaHora}. Descrição: ${novaDescricao}`);
-    }
+    
+    console.log("\n Agendamento realizado com sucesso!");
+    console.log(`Paciente: ${pacienteEncontrado.nome} | Médico: ${medicoEncontrado.nome}`);
+    console.log(`Data: ${novaData} às ${novaHora}`);
+};
 
 export default adicionarConsulta;

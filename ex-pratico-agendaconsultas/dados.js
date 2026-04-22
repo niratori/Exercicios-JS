@@ -1,4 +1,4 @@
-const medicos = [
+let medicos = [
   { 
     id: 1, 
     nome: "Dr. House", 
@@ -11,7 +11,7 @@ const medicos = [
   },
 ]
 
-const pacientes = [
+let pacientes = [
   { 
     id: 1, 
     nome: "John Doe", 

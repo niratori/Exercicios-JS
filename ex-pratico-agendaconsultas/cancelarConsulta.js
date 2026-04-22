@@ -1,3 +1,5 @@
+import dados from "./dados.js";
+
 function removerConsulta(consultas, idConsulta) {
     // Encontrar o índice da consulta com base no ID inserido
     const indice = consultas.findIndex(consulta => consulta.id === idConsulta && !consulta.cancelada);
