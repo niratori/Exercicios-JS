@@ -1,17 +1,15 @@
 function atualizarConsulta(consultas, idConsulta, novaData, novaHora, novaDescricao) {
     
-    // 1. Achar a consulta (Lembre-se: o array 'consultas' deve vir como 1º argumento)
+    // 1. Achar a consulta
     let consultaEncontrada = consultas.find(c => c.id === idConsulta);
 
-    // 2. Verificação (O return DEVE estar dentro das chaves do if)
+    // 2. Verificação
     if (!consultaEncontrada) {
         console.log(`Erro: Consulta com ID ${idConsulta} não encontrada!`);
         return; // Para a execução aqui se não encontrar
     }
 
-    // 3. Lógica do Operador || (Short-circuit)
-    // Se 'novaData' for uma string vazia "", o JS entende como 'false' 
-    // e mantém o valor antigo (consultaEncontrada.data)
+    // 3. Lógica do Operador
     consultaEncontrada.data = novaData || consultaEncontrada.data;
     consultaEncontrada.hora = novaHora || consultaEncontrada.hora;
     consultaEncontrada.descricao = novaDescricao || consultaEncontrada.descricao;

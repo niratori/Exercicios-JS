@@ -15,7 +15,6 @@ function mainMenu() {
     console.log("5. Sair (QUIT)");
 }
 
-// CORREÇÃO 1: Variável declarada fora do loop
 let opcao; 
 
 while (opcao !== "5") {
