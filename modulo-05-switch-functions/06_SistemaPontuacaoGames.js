@@ -18,6 +18,5 @@ for (let i = 1; i <= 3; i++) {
     const pontuacao = prompt.questionInt("Digite a pontuação da partida " + i + ": ");
     pontuacoes.push(pontuacao);
 }
-// Agora calculamos a pontuação total e classificamos o jogador usando a função que criamos anteriormente
-const classificacao = calcularPontuacaoTotal(pontuacoes);
+// Agora calculamos a pontuação total e classificamos o jogador usando a função que criamos antes
 console.log("Classificação do jogador: " + classificacao);

@@ -1,11 +1,4 @@
-// Conversor de moedas
-// Puxando a lib
 const prompt = require("readline-sync");
-
-/*  Aqui criamos a arrow function que recebe o valor em reais e a moeda de destino
-    depois, dentro da função, vamos usar o switch pra verificar qual é a moeda de destino e fazer a conversão de acordo com a cotação atual
-    Se não reconhecer a moeda de destino inserida, vai retornar o valor em reais sem conversão.
-*/
 
 console.log("--- Bem-vindo ao conversor de moedas! ---");
 
