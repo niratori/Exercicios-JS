@@ -13,7 +13,7 @@ Esse repositório tem atualmente 51 exercícios no total divididos em 5 módulos
 * **Módulo Desafios Integrados** | <ins> 0/10 exercícios concluídos. </ins>
 * **Dois Projetos de Calculadora** | <ins> Ambos Concluídos. </ins>
 * **Módulo CRUD** | <ins> Concluído. </ins>
-* **Exemplo Prático de Agenda de Consultas** | <ins> Em andamento. </ins>
+* **Exemplo Prático de Agenda de Consultas** | <ins> Concluído. </ins>
 
 ## Tecnologias Usadas
 * Node.js
