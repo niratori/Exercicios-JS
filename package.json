@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "prompt-sync": "^4.1.0"
   },
   "type": "commonjs"
 }
